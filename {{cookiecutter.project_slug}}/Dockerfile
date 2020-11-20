@@ -11,15 +11,15 @@ WORKDIR /app
 
 RUN set -xe && \
     pip install -U pip && \
-    pip install -U pipenv pbr
+    pip install -U poetry
 
-COPY Pipfile* ./
+COPY pyproject.toml poetry.* ./
 
-RUN pipenv lock -r > requirements.txt
+RUN poetry install
 
 COPY . .
 
-RUN pipenv run python setup.py bdist_wheel
+RUN poetry build
 
 FROM python:{{cookiecutter.python_version}}-slim as app
 
@@ -42,4 +42,5 @@ RUN set -xe && \
 
 COPY settings.toml .
 
-ENTRYPOINT ["{{cookiecutter.project_slug}}", "main"]
+ENTRYPOINT ["{{cookiecutter.project_slug}}"]
+CMD ["main"]

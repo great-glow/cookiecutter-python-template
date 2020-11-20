@@ -1,4 +1,4 @@
-![Main](https://github.com/VaultVulp/cookiecutter-python-template/workflows/Main/badge.svg)
+![Main](https://github.com/great-glow/cookiecutter-python-template/workflows/Main/badge.svg)
 
 # Cookiecutter Template for Python Projects
 
@@ -10,10 +10,10 @@
     ```
 2. Use my template
     ```bash
-    cookiecutter https://github.com/VaultVulp/cookiecutter-python-template
+    cookiecutter https://github.com/great-glow/cookiecutter-python-template
     cd <project-folder>
     git init
-    pipenv install -d
+    poetry install
     git add .
     git commit -m "Initial commit"
     ```
