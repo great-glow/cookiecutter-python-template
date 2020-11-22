@@ -4,7 +4,7 @@
 
 This template uses [Poetry](https://python-poetry.org/) as a dependency manager.
 
-I have another similar template that uses Pipenv [here](https://github.com/VaultVulp/cookiecutter-python-template).
+I have similar template that uses Pipenv [here](https://github.com/VaultVulp/cookiecutter-python-template).
 
 ## Usage
 
