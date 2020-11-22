@@ -2,6 +2,10 @@
 
 # Cookiecutter Template for Python Projects
 
+This template uses [Poetry](https://python-poetry.org/) as a dependency manager.
+
+I have another similar template that uses pipenv [here](https://github.com/VaultVulp/cookiecutter-python-template/edit/master/README.md).
+
 ## Usage
 
 1. Install [Cookiecutter](https://github.com/cookiecutter/cookiecutter) globally
