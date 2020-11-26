@@ -1,30 +1,30 @@
 main: fix-isort fix-yapf check-code-style test check-fixtures
 
 test:
-	poetry run py.test --ff --cov {{cookiecutter.project_name}}
+	poetry run py.test --ff --cov {{cookiecutter.project_slug}}
 
 test-report:
-	poetry run py.test --ff --cov {{cookiecutter.project_name}} --html=report.html --self-contained-html
+	poetry run py.test --ff --cov {{cookiecutter.project_slug}} --html=report.html --self-contained-html
 
 check-fixtures:
-	poetry run py.test {{cookiecutter.project_name}} --dead-fixtures --dup-fixtures
+	poetry run py.test {{cookiecutter.project_slug}} --dead-fixtures --dup-fixtures
 
 check-yapf:
-	poetry run yapf -d -r -p {{cookiecutter.project_name}}
+	poetry run yapf -d -r -p {{cookiecutter.project_slug}}
 
 fix-yapf:
-	poetry run yapf -i -r -p {{cookiecutter.project_name}}
+	poetry run yapf -i -r -p {{cookiecutter.project_slug}}
 
 check-isort:
-	poetry run isort -c {{cookiecutter.project_name}}
+	poetry run isort -c {{cookiecutter.project_slug}}
 
 fix-isort:
-	poetry run isort {{cookiecutter.project_name}}
+	poetry run isort {{cookiecutter.project_slug}}
 
 reformat-files: fix-yapf fix-isort
 
 check-code-style: check-isort check-yapf
-	poetry run flake8 {{cookiecutter.project_name}}
+	poetry run flake8 {{cookiecutter.project_slug}}
 
 {%- if cookiecutter.upload_badge_to_minio_host == 'y' %}
 badge:
