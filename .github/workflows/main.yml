@@ -17,14 +17,25 @@ jobs:
     - name: Set up environment
       run: |
         python -m pip install --upgrade pip
-        pip install -U cookiecutter
+        pip install -U cookiecutter poetry
 
     - name: Try to use template
       run: |
         cd ..
         cookiecutter --no-input ./cookiecutter-python-template
         cd awesomium
-        ls -la
-        git init
+        poetry install
+        make check-code-style
+        make test
+        make test-report
+        make check-fixtures
+        make reformat-files
+
+    - name: Try to build the template
+      run: |
+        cd ..
+        rm -rf awesomium
+        cookiecutter --no-input ./cookiecutter-python-template
+        cd awesomium
         docker build -t awesomium .
         docker run --rm awesomium

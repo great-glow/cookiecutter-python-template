@@ -1,12 +1,13 @@
 import sys
 
-from dynaconf import settings
 from loguru import logger
+
+from {{cookiecutter.project_slug}}.config import settings
 
 
 async def setup_logger() -> None:
     logger.remove()
-    if settings.IS_DEBUG:
+    if settings.is_debug:
         level = 'DEBUG'
         diagnose = True
     else:
