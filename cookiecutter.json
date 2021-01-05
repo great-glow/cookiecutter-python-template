@@ -8,5 +8,6 @@
     "minio_host": "some.host.domain",
     "enable_auto_deploy": "n",
     "coverage_fail_under": "30",
-    "python_version": "3.8"
+    "python_version": "3.9",
+    "enable_vault_loader": "n"
 }
